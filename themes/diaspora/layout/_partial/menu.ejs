@@ -1,0 +1,14 @@
+<div class="nav">
+    <ul id="menu-menu" class="menu">
+        <% for (var i in theme.menu){ %>
+        <li class="<%- theme.menu[i].indexOf('http') > -1 ? ' ' : 'pview' %> menu-item menu-item-type-post_type menu-item-object-page">
+            <% var external = theme.menu[i].startsWith('http://') || theme.menu[i].startsWith('https://') %>
+            <%- link_to(external ? theme.menu[i] : url_for_lang(theme.menu[i]), __(i), {external})%>
+        </li>
+        <%}%>
+    </ul>
+    <p id="copyright">
+        &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>.
+        Powered by <%- link_to("http://hexo.io/", "Hexo", {external: true})%>
+    </p>
+</div>

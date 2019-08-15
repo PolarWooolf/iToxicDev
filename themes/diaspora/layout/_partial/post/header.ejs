@@ -1,0 +1,30 @@
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="<%= config.url %>"></a>
+    <% if (theme.mp3) {%>
+    <div title="Play my music" class="icon-play"></div>
+    <%}%>
+    <h3 class="subtitle"><%- page.title %></h3>
+    <div class="social">
+        <div class="switchlang_dark">
+            <%- page.lang %>
+        </div>
+        <div>
+            <div class="share">
+                <a title="QR code" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar" style="width: 0"></div>
+    <div id="toolbar-options-dark" class="hidden">
+        <% if (!getPostLanguages().length) { %>
+            <%- link_to(switch_lang('en'), 'en') %>
+            <%- link_to(switch_lang('ru'), 'ru') %>
+        <% } else { %>
+            <% for (var l of getPostLanguages()) { %>
+                <a href="<%= l.url %>"><%= l.label %></a>
+            <% } %>
+        <% } %>
+    </div>
+</div>

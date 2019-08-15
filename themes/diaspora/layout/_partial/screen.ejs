@@ -1,0 +1,56 @@
+<% var first = page.posts.sort("date", "desc").eq(0); %>
+<div id="screen">
+    <div id="mark">
+        <div class="layer-first" data-depth="0.4">
+            <%- image_tag(first.cover || theme.welcome_cover || "/img/welcome-cover.jpg", {id: "cover-first", crossorigin: "anonymous", width: 1920, height: 1080}) %>
+        </div>
+        <div class="layer" data-depth="0.4">
+            <%- image_tag(theme.welcome_cover || "/img/welcome-cover.jpg", {id: "cover", crossorigin: "anonymous", width: 1920, height: 1080}) %>
+        </div>
+    </div>
+    <div id="vibrant">
+        <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
+            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
+        </svg>
+        <div></div>
+    </div>
+    <div id="header">
+        <div>
+            <a class="image-logo-dark" href="/"><div class="image-logo"></div></a>
+            <div class="icon-daynight switchdaynight">
+                <span class="fa-stack fa-05x">
+                    <i class="far fa-sun fa-stack-2x"></i>
+                    <i class="fas fa-moon fa-stack-1x"></i>
+                </span>
+            </div>
+            <div class="icon-lang switchlang"><%- page.lang %></div>
+            <div class="icon-menu switchmenu"></div>
+            
+        </div>
+    </div>
+    <div id="toolbar-options" class="hidden">
+        <%- link_to(switch_lang('en'), 'en') %>
+        <%- link_to(switch_lang('ru'), 'ru') %>
+     </div>
+    <div id="toolbar-daynight" class="hidden">
+        <a href="#" class="dna" title="<%= __('daynight.auto')%>">
+            <span class="fa-stack dna fa-05x">
+                <i class="far dna fa-sun fa-stack-2x"></i>
+                <i class="fas dna fa-moon fa-stack-1x"></i>
+            </span>
+        </a>
+        <a href="#" class="dnd" title="<%= __('daynight.day')%>">
+            <i class="fas fa-sun dnd"></i>
+        </a>
+        <a href="#" class="dnn" title="<%= __('daynight.night')%>">
+            <i class="fas fa-moon dnn"></i>
+        </a>
+     </div>
+    <% if ( first ) { %>
+    <div id="post0">
+        <p><%- first.date.format("MMMM DD, YYYY") %></p>
+        <h2><%- link_to(url_for_lang(first.path), first.title || config.title, {class: "posttitle"}) %></h2>
+        <p class="summary"><%- truncate(strip_html(first.content), {length: 128, omission: '...'}) %></p>
+    </div>
+    <% } %>
+</div>

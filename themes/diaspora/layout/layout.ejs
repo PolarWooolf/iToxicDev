@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>" class="loading">
+<%- partial('_partial/head') %>
+<body class="loading night">
+    <span id="config-title" style="display:none"><%= config.title %></span>
+    <div id="loader"></div>
+    <%- body %>
+    <%- partial('_partial/scripts', null, {cache: true}) %>
+    <%- partial("_partial/google-analytics", {cache: true}) %>
+</body>
+</html>

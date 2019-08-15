@@ -1,0 +1,5 @@
+<% if (post.categories && post.categories.length){ %>
+  <div class="set">
+    <%- list_categories(post.categories, {show_count: false, orderby: "length", order: -1}) %>
+  </div>
+<% } %>

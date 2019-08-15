@@ -1,0 +1,26 @@
+<div id="single" class="page">
+    <div id="top">
+        <a class="icon-left image-icon" href="javascript:history.back()"></a>
+        <h3 class="subtitle" style="display: block"><%- page.title %></h3>
+        <div class="scrollbar" style="width: 0"></div>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div class="main">
+                <div class="content">
+                <% if (page.search || page.type === "search") { %>
+                    <%- partial('_partial/search') %>
+                <% } else if (page.type === "tags") { %>
+                    <%- partial('_partial/tags') %>
+                <% } else if (page.type === 'categories') { %>
+                    <%- partial('_partial/categories') %>
+                <% } else { %>
+                    <article>
+                        <%- page.content %>
+                    </article>
+                <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
