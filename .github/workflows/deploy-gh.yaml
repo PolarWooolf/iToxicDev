@@ -1,5 +1,7 @@
-on: push
-branches: [master]
+on:
+  push:
+    branches:
+    - master
 name: Deploy to GH Pages
 jobs:
   build:
@@ -21,4 +23,3 @@ jobs:
         NAME: Sergey Zhirov
       with:
         args: deploy
-
