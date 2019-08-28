@@ -1,0 +1,24 @@
+on: push
+branches: [master]
+name: Deploy to GH Pages
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clean
+      uses: heowc/action-hexo@master
+      with:
+        args: clean
+    - name: Generate
+      uses: heowc/action-hexo@master
+      with:
+        args: generate
+    - name: Deploy
+      uses: heowc/action-hexo@master
+      env:
+        EMAIL: polarwolf@cscleague.org
+        NAME: Sergey Zhirov
+      with:
+        args: deploy
+
