@@ -506,6 +506,16 @@ $(function() {
                 }
                 return false;
                 break;
+            // home
+            case (tag.indexOf('icon-left') != -1):
+                $('.toc').fadeOut(100);
+                if ($('#preview').hasClass('show')) {
+                    history.back();
+                } else {
+                    location.href = $('.icon-left').data('url')
+                }
+                return false;
+                break;
             // qrcode
             case (tag.indexOf('icon-scan') != -1):
                 if ($('.icon-scan').hasClass('tg')) {
@@ -603,7 +613,7 @@ $(function() {
                             // See Options -> getThumbBoundsFn section of documentation for more info
                             var thumbnail = imgs[index],
                                 pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                                rect = thumbnail.getBoundingClientRect(); 
+                                rect = thumbnail.getBoundingClientRect();
 
                             return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
                         }
@@ -614,7 +624,7 @@ $(function() {
                 return false;
                 break;
               // comment
-            case - 1 != tag.indexOf("comment"): 
+            case - 1 != tag.indexOf("comment"):
                 Diaspora.loading(),
                 comment = $('#gitalk-container');
                 gitalk = new Gitalk({
