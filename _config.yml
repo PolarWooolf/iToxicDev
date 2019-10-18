@@ -81,7 +81,9 @@ theme: diaspora
 deploy:
   type: git
   repo: https://github.com/CodersGit/iToxicDev
-  branch: published
+  branch: gh-pages
+  name: Sergey Zhirov
+  email: polarwolf@cscleague.org
 
 i18n:
   type: [page, post]
