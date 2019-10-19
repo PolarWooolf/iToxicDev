@@ -24,6 +24,13 @@
         <div class="stuff">
             <%- partial('_partial/post/tag', {post: page}) %>
         </div>
+        <div class="likely">
+            <div class="facebook">Share</div>
+            <div class="twitter">Tweet</div>
+            <div class="vkontakte">Share</div>
+            <div class="telegram" data-url="https://t.me/iv?url=<%- url %>&rhash=884d3da0912635">Send</div>
+            <div class="linkedin">Share</div>
+        </div>
         <%- partial('gitalk', {post: page}) %>
     </div>
     <% if (theme.TOC == true){ %>

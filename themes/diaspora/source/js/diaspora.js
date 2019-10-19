@@ -118,6 +118,7 @@ var Diaspora = {
             }else{
                 $('#container').show();
             }
+            likely.initiate();
             Diaspora.loaded();
         });
         setTimeout(function() {
