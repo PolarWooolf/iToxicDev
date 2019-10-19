@@ -4,7 +4,7 @@ date: 2019-06-13 07:07:06
 tags: ['Hello, world!']
 categories: ['#random']
 cover: '/blog/2019/06/13/hello-again/hell-o.jpg'
-contentId: hello-world
+label: hello-world
 lang: ru
 ---
 {% asset_img hell-o.jpg %}

@@ -18,13 +18,11 @@
     </div>
     <div class="scrollbar" style="width: 0"></div>
     <div id="toolbar-options-dark" class="hidden">
-        <% if (!getPostLanguages().length) { %>
+        <% if (!config.multilingual) { %>
             <%- link_to(switch_lang('en'), 'en') %>
             <%- link_to(switch_lang('ru'), 'ru') %>
         <% } else { %>
-            <% for (var l of getPostLanguages()) { %>
-                <a href="<%= l.url %>"><%= l.label %></a>
-            <% } %>
+            <%- list_alternates('<a class="%currentTag" href="%url" hreflang="%lang" title="%title">%lang</a>') %>
         <% } %>
     </div>
 </div>
