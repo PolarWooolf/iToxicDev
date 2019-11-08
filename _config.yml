@@ -80,7 +80,7 @@ theme: diaspora
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/CodersGit/iToxicDev
+  repo: git@github.com:CodersGit/iToxicDev.git
   branch: gh-pages
   name: Sergey Zhirov
   email: polarwolf@cscleague.org

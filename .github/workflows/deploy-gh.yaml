@@ -8,9 +8,14 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout revision
+        uses: actions/checkout@v1
       - name: Install Node
         uses: actions/setup-node@v1
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.1.1
+        with:
+          ssh-private-key: ${{ secrets.GH_DEPLOY_KEY }}
       - name: Do all
         run: |
           npm ci
