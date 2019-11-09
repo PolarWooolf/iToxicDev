@@ -6,7 +6,7 @@
     "version": "4.0.0"
   },
   "dependencies": {
-    "deepmerge": "^4.1.1",
+    "deepmerge": "^4.2.2",
     "hexo": "^4.0.0",
     "hexo-codepen-v2": "^0.2.3",
     "hexo-deployer-git": "^2.0.0",
@@ -16,7 +16,6 @@
     "hexo-generator-i18n": "^0.0.7",
     "hexo-generator-index-i18n": "^0.2.1",
     "hexo-generator-tag": "^1.0.0",
-    "hexo-github-card": "^1.0.3",
     "hexo-helper-page-languages": "^0.0.1",
     "hexo-multilingual": "^0.6.0",
     "hexo-renderer-ejs": "^1.0.0",

@@ -24,5 +24,3 @@ Why do I need all this? I nave no idea... I love to help others. And share my ex
 ## Let's talk!
 
 You can talk with me in [Telegram](http://t.me/polarwooolf) or [Twitter](http://twitter.com/polarwooolf) or right here, in comments.
-
-{% githubCard user:CodersGit %}

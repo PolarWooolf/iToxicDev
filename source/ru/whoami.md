@@ -24,5 +24,3 @@ IRL меня зовут Серегой. Иногда СЫРОЖОЙ. Но в и�
 ## Го поболтаем?
 
 Го! Это можно сделать в [Telegram](http://t.me/polarwooolf), [Twitter](http://twitter.com/polarwooolf) или [VK](http://vk.com/polarwooolf) или прямо тут, в комментариях.
-
-{% githubCard user:CodersGit %}
