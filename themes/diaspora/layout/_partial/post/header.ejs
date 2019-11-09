@@ -22,7 +22,7 @@
             <%- link_to(switch_lang('en'), 'en') %>
             <%- link_to(switch_lang('ru'), 'ru') %>
         <% } else { %>
-            <%- list_alternates('<a class="%currentTag" href="%url" hreflang="%lang" title="%title">%lang</a>') %>
+            <%- list_alternates_lang('<a class="%currentTag" href="%url" hreflang="%lang" title="%title">%lang</a>') %>
         <% } %>
     </div>
 </div>
