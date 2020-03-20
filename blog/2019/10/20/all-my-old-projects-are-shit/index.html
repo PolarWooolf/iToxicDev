@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en,ru" class="loading">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>All my old projects are shit - iToxic.dev</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="PolarWolf STRELOK2022 BlogOfCoder PolarWooolf,"> 
+    <meta name="description" content="
+During all study in high school and university I always has been developing a projects. This artic,"> 
+    <meta name="author" content="Sergey Zhirov"> 
+    <link rel="alternative" href="atom.xml" title="iToxic.dev" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    
+        <link rel="amphtml" href="https://itoxic.dev/blog/2019/10/20/all-my-old-projects-are-shit/amp/index.html">
+    
+</head>
+
+<body class="loading night">
+    <span id="config-title" style="display:none">iToxic.dev</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="/index.html"></a>
+    
+    <h3 class="subtitle">All my old projects are shit</h3>
+    <div class="social">
+        <div class="switchlang_dark">
+            en
+        </div>
+        <div>
+            <div class="share">
+                <a title="QR code" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar" style="width: 0"></div>
+    <div id="toolbar-options-dark" class="hidden">
+        
+            <ul class="alternate-list"><li class="alternate-list-item"><a class="alternate-list-link current" href="/blog/2019/10/20/all-my-old-projects-are-shit/" hreflang="en" title="All my old projects are shit">en</a></li><li class="alternate-list-item"><a class="alternate-list-link " href="/ru/blog/2019/10/20/my-old-projects-are-shit/" hreflang="ru" title="Мои старые проекты - говно">ru</a></li></ul>
+        
+    </div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">All my old projects are shit</h1>
+        
+  <div class="set">
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/educational/">#educational</a></li></ul>
+  </div>
+
+
+        <div class="stuff">
+            <span>October 20, 2019</span>
+        </div>
+        <div class="content markdown">
+            <article>
+                <img src="/blog/2019/10/20/all-my-old-projects-are-shit/linus-torvalds-linux-shit-code.jpg" class="" title="Your code is shit!">
+<p>During all study in high school and university I always has been developing a projects. This article is about the most fun my mistakes in them.</p>
+<h2 id="webMCRex"><a href="#webMCRex" class="headerlink" title="webMCRex"></a>webMCRex</h2><p>webMCRex was the first my product, that found some popularity. During three years of development it got a lot of places for which I am ashamed so far.</p>
+<h3 id="Interlayer-database-class"><a href="#Interlayer-database-class" class="headerlink" title="Interlayer database class"></a>Interlayer database class</h3><p>It was happend when PHP 5.4 came on a lot of hostings and appeared a deprecation warning for function <code>mysql_connect()</code>, that born <a href="https://github.com/WorldsOfCubes/webMCRex/blob/master/upload/instruments/base.class.php#L333" target="_blank" rel="noopener">a code</a> that looks like:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DB</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* ... */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">affected_rows</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (<span class="keyword">$this</span>-&gt;method) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'mysql'</span>:</span><br><span class="line">                <span class="keyword">return</span> mysql_affected_rows(<span class="keyword">$this</span>-&gt;link);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'mysqli'</span>:</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">return</span> mysqli_affected_rows(<span class="keyword">$this</span>-&gt;link);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* ... */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>It breaks the Open Closed Principle of popular <em>SOLID</em> pattern.<br> Really I’m not a fun of following any rules, but SOLID is basic ruleset and I have no idea about any reason to break it.<br> If do not think about any reason to create this class, this code anyway sucks.<br> This code was reused in <a href="https://github.com/CodersGit/Metrostroi_net/blob/master/classes/db.class.php" target="_blank" rel="noopener">Metrostroi Database</a> and <a href="https://github.com/CodersGit/IssueTracker/blob/master/classes/db.class.php" target="_blank" rel="noopener">IssueTracker</a>.<br> In my defence I’ll say that I had a very bad knowledge about inheritance in PHP, but if do that, more correct will be approach with parent interface and two separate child classes for each connection type.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">DBProvider</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* ... */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">affected_rows</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">/* ... */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySQLProvider</span> <span class="keyword">implements</span> <span class="title">DBProvider</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* ... */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">affected_rows</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mysql_affected_rows(<span class="keyword">$this</span>-&gt;link);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* ... */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySQLiProvider</span> <span class="keyword">implements</span> <span class="title">DBProvider</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* ... */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">affected_rows</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mysqli_affected_rows(<span class="keyword">$this</span>-&gt;link);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* ... */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="WorldsOfCubes"><a href="#WorldsOfCubes" class="headerlink" title="WorldsOfCubes"></a>WorldsOfCubes</h2><p>Appearing six months earlier webMCRex, that project has survived a lot.<br> It was started as an OpenID for Minecraft servers websites and bring players availability to use a one account with skin/cloack for any server.<br> This project came too late and had no benefits for server admins to use it, that killed it a time later.</p>
+<h3 id="Security-through-obscurity"><a href="#Security-through-obscurity" class="headerlink" title="Security through obscurity"></a>Security through obscurity</h3><p>WoCAuth had a problem: I had no idea how to protect a login agreement page from imitating user actions. So, I added a token that created in this way:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$token = md5(md5($player . $proj[<span class="string">'security_key'</span>]));</span><br></pre></td></tr></table></figure>
+
+<p>That idea sucks, yeah</p>
+<h2 id="Metrostroi"><a href="#Metrostroi" class="headerlink" title="Metrostroi"></a>Metrostroi</h2><p>Metrostroi site was the first my project that was developed completely by me.</p>
+<h3 id="Same-auth-tokens-for-different-users"><a href="#Same-auth-tokens-for-different-users" class="headerlink" title="Same auth tokens for different users"></a>Same auth tokens for different users</h3><p>Auth was saved with special tokens that was generated as a random string of 128 chars:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sessionID = Base::randString(<span class="number">128</span>);</span><br></pre></td></tr></table></figure>
+
+<p>Token was refreshed after any paage load, that brought a big probability of tokens coincidence for different users.<br> A small time later we stopped token refresh, but that problem stilled unresolved.<br> it was <a href="https://github.com/CodersGit/Metrostroi_net/commit/dc565a7fc0df2a704773da3818fbca8f374b2d87#diff-ea8167f6dfe23b85ceb013414d474868" target="_blank" rel="noopener">resolved</a> with an easy way:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sessionID = $player-&gt;steamid . <span class="string">"_"</span>. Base::randString(<span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+
+<p>A lesson: think about random like it makes same result any time</p>
+<h3 id="ROFLs-in-a-code"><a href="#ROFLs-in-a-code" class="headerlink" title="ROFLs in a code"></a>ROFLs in a code</h3><p>When all was just started I worked in a fun.<br>In that time in code appeared variables <code>$tox1n_lenvaya_jopa</code> (from russian: tox1n is a lazy ass), <code>$typical_ple</code> (from Pleigox, nickname of an one strange player)<br>or that checks:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span> (!defined(<span class="string">'MITRASTROI_ROOT'</span>)) &#123;</span><br><span class="line">	<span class="keyword">exit</span>(<span class="string">'Toxin Leniviy Pidor'</span>); <span class="comment">// from russian: Toxin is a lazy bitch</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>That was very unprofessionally. And long names made a work with project a bit harder</p>
+<h2 id="So-what-I-want-to-tell…"><a href="#So-what-I-want-to-tell…" class="headerlink" title="So, what I want to tell…"></a>So, what I want to tell…</h2><p>A start of my work was full of code that I am ashamed. But it gave me a lot of unique experience about what I should not to do.</p>
+<p>Do not be afraid to make a shitcode - it make you an experience.<br> It is important to stop writing it in future. And this is not easy.<br>  Alas, even among experienced programmers there are those that ship the shit with cisterns. And <em>that</em> is very bad.</p>
+
+            </article>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        <div class="stuff">
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Metrostroi/" rel="tag">Metrostroi</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Shitcode/" rel="tag">Shitcode</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Shitposting/" rel="tag">Shitposting</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/WorldsOfCubes/" rel="tag">WorldsOfCubes</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/webMCRex/" rel="tag">webMCRex</a></li></ul>
+
+
+        </div>
+        <div class="likely">
+            <div class="facebook">Share</div>
+            <div class="twitter">Tweet</div>
+            <div class="vkontakte">Share</div>
+            <div class="telegram" data-url="https://t.me/iv?url=https://itoxic.dev/blog/2019/10/20/all-my-old-projects-are-shit/index.html&rhash=884d3da0912635">Send</div>
+            <div class="linkedin">Share</div>
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='0ce8ea29d4d8f21d02ed'
+        data-cs='dc2bae896869e1c0b63a7851d2a147d69aa37f4c'
+        data-r='iToxicDev'
+        data-o='CodersGit'
+        data-a='CodersGit'
+        data-d='false'
+    >Comments</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+    <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.13/css/all.css">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/jquery.toolbar.min.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader- -active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link href="https://unpkg.com/ilyabirman-likely@2/release/likely.css" rel="stylesheet">
+<script src="https://unpkg.com/ilyabirman-likely@2/release/likely.js" type="text/javascript"></script>
+
+    
+
+</body>
+</html>
